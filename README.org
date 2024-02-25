@@ -1,0 +1,28 @@
+#+title: LaTeX Template
+#+author: Lucas Sta Maria
+
+My LaTeX template for lectures and homeworks, with custom math commands and lecture macros I've found myself needing.
+
+* Set up
+
+For a new project, simply clone the directory.
+
+#+begin_src sh
+git clone --depth=1 https://github.com/priime0/latextemplate
+#+end_src
+
+If you'd like to make the math operators global, you can symlink or copy the package file into your custom directory.
+
+#+begin_src sh
+# First argument is the path to this repository's `priimemath.sty' file.
+# Second argument is the path to your common LaTeX package directory.
+# Replace `ln -s' with `cp' if you prefer to copy rather than link.
+ln -s ./priimemath.sty ~/texmf/tex/latex/commonstuff/priimemath.sty
+#+end_src
+
+* Running
+
+I use [[https://github.com/casey/just][just]] to run my LaTeX commands.
+
+ * ~just run~: compile =main.tex= to =out/main.pdf=.
+ * ~just clean~: clean the contents of  =out/=.

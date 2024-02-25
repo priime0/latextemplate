@@ -3,6 +3,8 @@
 
 My LaTeX template for lectures and homeworks, with custom math commands and lecture macros I've found myself needing.
 
+=priimemath.sty= defines a package that includes environments and operators I've defined for myself. =main.tex= defines a template for lecture notes and homework -- it is dependent on =priimemath.sty=.
+
 * Set up
 
 For a new project, simply clone the directory.

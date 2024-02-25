@@ -5,6 +5,7 @@
 \RequirePackage{amsthm}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{xcolor}
+\tcbuselibrary{theorems}
 
 % Environments
 
@@ -25,52 +26,16 @@
   \\ \textit{Answer}.
 }{\vspace{0.5em}}
 
-\theoremstyle{definition}
-\newtheorem{thm}{Theorem}[section]
-\theoremstyle{definition}
-\newtheorem{crly}[thm]{Corollary}
-\theoremstyle{definition}
-\newtheorem{lmma}[thm]{Lemma}
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\theoremstyle{definition}
-\newtheorem{excs}[thm]{Exercise}
-\theoremstyle{definition}
-\newtheorem{prop}[thm]{Proposition}
-\theoremstyle{definition}
-\newtheorem{exmp}[thm]{Example}
-\theoremstyle{definition}
-\newtheorem{rmrk}[thm]{Remark}
-
 \definecolor{colorthemesubtle}{RGB}{237,231,246}
 
-\newtcolorbox{tbox}[2][]
-{
-  colframe = colorthemesubtle,
-  colback  = colorthemesubtle,
-  coltitle = black,
-  fonttitle = \bfseries,
-  title    = #2,
-  #1,
-}
-
-\newtcolorbox{cbox}[1][]
-{
-  colframe = colorthemesubtle,
-  colback  = colorthemesubtle,
-  coltitle = black,
-  fonttitle = \bfseries,
-  #1,
-}
-
-\newenvironment{theorem}     {\begin{cbox} \begin{thm}}  {\end{thm} \end{cbox}}
-\newenvironment{corollary}   {\begin{cbox} \begin{crly}} {\end{crly} \end{cbox}}
-\newenvironment{lemma}       {\begin{cbox} \begin{lmma}} {\end{lmma} \end{cbox}}
-\newenvironment{definition}  {\begin{cbox} \begin{defn}} {\end{defn} \end{cbox}}
-\newenvironment{exercise}    {\begin{cbox} \begin{excs}} {\end{excs} \end{cbox}}
-\newenvironment{proposition} {\begin{cbox} \begin{prop}} {\end{prop} \end{cbox}}
-\newenvironment{example}     {\begin{cbox} \begin{exmp}} {\end{exmp} \end{cbox}}
-\newenvironment{remark}      {\begin{cbox} \begin{rmrk}} {\end{rmrk} \end{cbox}}
+\newtcbtheorem[number within=section]{theorem}{Theorem}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{thrm}
+\newtcbtheorem[use counter from=theorem]{corollary}{Corollary}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{crly}
+\newtcbtheorem[use counter from=theorem]{lemma}{Definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{lmma}
+\newtcbtheorem[use counter from=theorem]{definition}{Definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{defn}
+\newtcbtheorem[use counter from=theorem]{exercise}{definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{excs}
+\newtcbtheorem[use counter from=theorem]{proposition}{Definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{prop}
+\newtcbtheorem[use counter from=theorem]{example}{Definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{xmpl}
+\newtcbtheorem[use counter from=theorem]{remark}{Definition}{colframe=colorthemesubtle,colback=colorthemesubtle,coltitle=black,fonttitle=\bfseries}{rmrk}
 
 % Commands
 
@@ -86,4 +51,3 @@
 \newcommand{\abs}[1]{\lvert #1 \rvert}
 \newcommand{\norm}[1]{\lVert #1 \rVert}
 \newcommand{\ps}[1]{\left< #1 \right>}
-\newcommand{\priimetest}[1]{\left<#1 #1 #1\right>}
